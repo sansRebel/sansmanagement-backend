@@ -3,7 +3,6 @@ from sqlalchemy import Column, Integer, String, Enum
 from .database import Base
 import enum
 
-# Define contact categories
 class ContactCategory(str, enum.Enum):
     CUSTOMER = "Customer"
     VENDOR = "Vendor"

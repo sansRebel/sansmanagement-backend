@@ -8,19 +8,17 @@ app = FastAPI(title="SansManagement API")
 
 origins = [
     "http://localhost:3000",  # Local dev
-    # "https://your-frontend.vercel.app",  # Uncomment when deployed
+    "https://sansmanagement-frontend.vercel.app/",  
 ]
 
-#  Add this middleware BEFORE any routes
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,         # Use ["*"] to allow all (not recommended for private APIs)
+    allow_origins=origins,         
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-#  Create tables at startup
 @app.on_event("startup")
 async def on_startup():
     async with engine.begin() as conn:
