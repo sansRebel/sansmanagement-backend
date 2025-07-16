@@ -8,7 +8,7 @@ app = FastAPI(title="SansManagement API")
 
 origins = [
     "http://localhost:3000",  # Local dev
-    "https://sansmanagement-frontend.vercel.app/",  
+    "https://sansmanagement-frontend.vercel.app",  
 ]
 
 app.add_middleware(
